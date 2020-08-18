@@ -1,33 +1,64 @@
 # TO-DO: Complete the selection_sort() function below
-def selection_sort(arr):
-    # loop through n-1 elements
-    i = 0
-    while i < len(arr):
-        min = arr[i]
-        index = i
-        for j in range(i+1, len(arr)):
-            if arr[j] < min:
-                index = j
-                min = arr[j]
-        arr[i], arr[index] = arr[index], arr[i]
-        i += 1
-
-    return arr
+arr = [3, 1, 5, 4, 2]
+cur_index = 0
+smallest_index = cur_index
 
 
-# TO-DO:  implement the Bubble Sort function below
+# def selection_sort(arr):
+#     # from CS30
+#     # # loop through n-1 elements
+#     # i = 0
+#     # while i < len(arr):
+#     #     min = arr[i]
+#     #     index = i
+#     #     for j in range(i+1, len(arr)):
+#     #         if arr[j] < min:
+#     #             index = j
+#     #             min = arr[j]
+#     #     arr[i], arr[index] = arr[index], arr[i]
+#     #     i += 1
+
+#     # return arr
+
+#     # Tim's solution from CS34
+#     for i in range(0, len(arr) - 1):
+#         cur_index = i
+#         smallest_index = cur_index
+#         for n in range(cur_index, len(arr)):
+#             if arr[n] < arr[smallest_index]:
+#                 smallest_index = n
+#         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+#     return arr
+
+
+# print(selection_sort(arr))
+
+
+# def bubble_sort(arr):
+#     length = len(arr)
+#     for i in range(0, length - 1):
+#         for j in range(0, length - 1):
+#             if arr[j] > arr[j + 1]:
+#                 temp = arr[j]
+#                 arr[j] = arr[j + 1]
+#                 arr[j + 1] = temp
+#                 j+1
+#         i + 1
+#     return arr
 def bubble_sort(arr):
-    length = len(arr)
-    for i in range(0, length - 1):
-        for j in range(0, length - 1):
-            if arr[j] > arr[j + 1]:
-                temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
-                j+1
-        i + 1
+    swapped = True
+    while swapped:
+        swapped = False
+        for idx in range(len(arr) - 1):
+            num1 = arr[idx]
+            num2 = arr[idx + 1]
+            if num1 > num2:
+                arr[idx], arr[idx + 1] = arr[idx + 1], arr[idx]
+                swapped = True
     return arr
 
+
+print(bubble_sort(arr))
 
 '''
 STRETCH: implement the Count Sort function below
@@ -48,31 +79,7 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 
 
-def counting_sort(arr, maximum=None):
-    # Your code here
+# def counting_sort(arr, maximum=None):
+#     # Your code here
 
-    return arr
-
-
-# #done as guided project (not part of project for today)
-# def insertion_sort(input_list):
-#     pass
-#     # mark first item as sorted, separated first element?
-#     # no code needed here, conceptual
-#     for i in range(1, len(input_list)):
-#     # for every item starting at the second element
-#         #put item in a temp variable
-#         current_item = input_list[i]
-
-#         look_left_index = i - 1
-#         #look left until we find where it belongs
-#         # if not at beginning and
-#         # current item is less than sorted
-#         while look_left_index > 0 and current_item < input_list[look_left_index]:
-#             input_list[look_left_index + 1] = input_list[look_left_index]
-#             look_left_index -= 1
-
-#         input_list[look_left_index] = current_item
-
-#     return input_list
-#             # insert item
+#     return arr
